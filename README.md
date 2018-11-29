@@ -11,9 +11,12 @@
 	- listings/
 		- POST create a new listing, fields listed in listings/models.py
 		- GET get a list of Listings, available search params documented in schema.yml
-
+		- example
+		```
+		http GET http://127.0.0.1:8000/listings/ min_last_sold_date=="2017-02-22" max_last_sold_date=="2018-02-22"
+		```
 ## Assumptions
-- price comes in format $/\*dK|M
+- price comes in format $/d\*K|M
 - internal API, API would need more security and input verification to be fully implemented 
 - no fields are mandatory
 
