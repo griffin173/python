@@ -1,0 +1,293 @@
+info:
+  description: ''
+  title: ''
+  version: ''
+openapi: 3.0.0
+paths:
+  /listings/:
+    get:
+      description: 'API endpoint for querying/creating Listings, get, post
+
+        :param address: street address'
+      operationId: listings_list
+      parameters:
+      - in: query
+        name: address
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: zipcode
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: area_unit
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: home_type
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: link
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: city
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: state
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: bedrooms
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: zillow_id
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_size
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_size
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_sold_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_sold_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_rent_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_rent_price
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_property_size
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_property_size
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_rentzestimate_amount
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_rentzestimate_amount
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_tax_value
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_tax_value
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_tax_year
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_year_built
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_year_built
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_zestimate_amount
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_zestimate_amount
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_last_sold_date
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      - in: query
+        name: max_last_sold_date
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      tags:
+      - listings
+    post:
+      description: 'API endpoint for querying/creating Listings, get, post
+
+        :param address: street address'
+      operationId: listings_create
+      tags:
+      - listings
+  /listings/{id}/:
+    get:
+      description: API endpoint for a single listing, get, put, and patch
+      operationId: listings_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this listing.
+          title: !!python/tuple
+          - ID
+          type: integer
+      tags:
+      - listings
+    patch:
+      description: API endpoint for a single listing, get, put, and patch
+      operationId: listings_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this listing.
+          title: !!python/tuple
+          - ID
+          type: integer
+      tags:
+      - listings
+    put:
+      description: API endpoint for a single listing, get, put, and patch
+      operationId: listings_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this listing.
+          title: !!python/tuple
+          - ID
+          type: integer
+      tags:
+      - listings
+  /upload/{filename}/:
+    post:
+      description: accepts a CSV file and translates each row into a Listing and saves
+        it
+      operationId: upload_create
+      parameters:
+      - in: path
+        name: filename
+        required: true
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: string
+      tags:
+      - upload
+servers:
+- url: ''
