@@ -22,6 +22,8 @@
 
 ## Next Steps
 if i were to flesh out this API more fully i'd add
+- rewrite csv import to be more DRY and generic
+- batch saving during csv import
 - authentication
 - duplicate detection on records(zillow ID if that is available for all enteries, address if not)
 - impliment a location proximity search (ie within 10km of given address.  could get location info from google api)
