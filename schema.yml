@@ -6,9 +6,7 @@ openapi: 3.0.0
 paths:
   /listings/:
     get:
-      description: 'API endpoint for querying/creating Listings, get, post
-
-        :param address: street address'
+      description: API endpoint for querying/creating Listings, get, post
       operationId: listings_list
       parameters:
       - in: query
@@ -259,9 +257,7 @@ paths:
       tags:
       - listings
     post:
-      description: 'API endpoint for querying/creating Listings, get, post
-
-        :param address: street address'
+      description: API endpoint for querying/creating Listings, get, post
       operationId: listings_create
       tags:
       - listings
