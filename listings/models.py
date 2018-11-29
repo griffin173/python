@@ -45,23 +45,16 @@ class Listing(models.Model):
         """
 
         name_to_value_dict = {key:value for key, value in zip(headers, row)}
-
-        if 'area_unit' in name_to_value_dict:
-            self.area_unit = name_to_value_dict['area_unit']
+        # convert row and headers to dict and set fields
+        
         if 'bathrooms' in name_to_value_dict and name_to_value_dict['bathrooms']:
             self.bathrooms = Decimal(name_to_value_dict['bathrooms'])
         if 'bedrooms' in name_to_value_dict and name_to_value_dict['bedrooms']:
             self.bedrooms = int(name_to_value_dict['bedrooms'])
         if 'home_size' in name_to_value_dict and name_to_value_dict['home_size']:
             self.home_size = int(name_to_value_dict['home_size'])
-        if 'home_type' in name_to_value_dict:
-            self.home_type = name_to_value_dict['home_type']
-        if 'last_sold_date' in name_to_value_dict and name_to_value_dict['last_sold_date']:
-            self.last_sold_date = datetime.strptime(name_to_value_dict['last_sold_date'], "%m/%d/%Y").date()
         if 'last_sold_price' in name_to_value_dict and name_to_value_dict['last_sold_price']:
             self.last_sold_price = int(name_to_value_dict['last_sold_price'])
-        if 'link' in name_to_value_dict:
-            self.link = name_to_value_dict['link']
         if 'price' in name_to_value_dict and name_to_value_dict['price']:
             multiplier = name_to_value_dict['price'][-1]
             price = name_to_value_dict['price'][1:-1]
@@ -72,8 +65,6 @@ class Listing(models.Model):
             self.rent_price = int(name_to_value_dict['rent_price'])
         if 'rentzestimate_amount' in name_to_value_dict and name_to_value_dict['rentzestimate_amount']:
             self.rentzestimate_amount = int(name_to_value_dict['rentzestimate_amount'])
-        if 'rentzestimate_last_updated' in name_to_value_dict and name_to_value_dict['rentzestimate_last_updated']:
-            self.rentzestimate_last_updated = datetime.strptime(name_to_value_dict['rentzestimate_last_updated'], "%m/%d/%Y").date()
         if 'tax_value' in name_to_value_dict and name_to_value_dict['tax_value']:
             self.tax_value = int(name_to_value_dict['tax_value'])
         if 'tax_year' in name_to_value_dict and name_to_value_dict['tax_year']:
@@ -84,6 +75,10 @@ class Listing(models.Model):
             self.zestimate_amount = int(name_to_value_dict['zestimate_amount'])
         if 'zestimate_last_updated' in name_to_value_dict and name_to_value_dict['zestimate_last_updated']:
             self.zestimate_last_updated = datetime.strptime(name_to_value_dict['zestimate_last_updated'], "%m/%d/%Y").date()
+        if 'last_sold_date' in name_to_value_dict and name_to_value_dict['last_sold_date']:
+            self.last_sold_date = datetime.strptime(name_to_value_dict['last_sold_date'], "%m/%d/%Y").date()
+        if 'rentzestimate_last_updated' in name_to_value_dict and name_to_value_dict['rentzestimate_last_updated']:
+            self.rentzestimate_last_updated = datetime.strptime(name_to_value_dict['rentzestimate_last_updated'], "%m/%d/%Y").date()
         if 'zillow_id' in name_to_value_dict:
             self.zillow_id = name_to_value_dict['zillow_id']
         if 'address' in name_to_value_dict:
@@ -94,6 +89,12 @@ class Listing(models.Model):
             self.state = name_to_value_dict['state']
         if 'zipcode' in name_to_value_dict:
             self.zipcode = name_to_value_dict['zipcode']
+        if 'area_unit' in name_to_value_dict:
+            self.area_unit = name_to_value_dict['area_unit']
+        if 'link' in name_to_value_dict:
+            self.link = name_to_value_dict['link']
+        if 'home_type' in name_to_value_dict:
+            self.home_type = name_to_value_dict['home_type']
     
         return self;
     

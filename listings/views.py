@@ -3,11 +3,11 @@ from listings.serializers import ListingSerializer
 from listings.filters import ListingFilter
 from rest_framework import generics, views
 from rest_framework.response import Response
-import csv
 from rest_framework import generics
 from rest_framework.parsers import FileUploadParser
 from django_filters import rest_framework as filters
 from io import TextIOWrapper
+import csv
 
 class ListingList(generics.ListCreateAPIView):
     """
