@@ -3,6 +3,10 @@ from decimal import Decimal
 from datetime import datetime
 
 class Listing(models.Model):
+    """
+    model representing a house rental listing
+
+    """
     created = models.DateTimeField(auto_now_add=True)
     area_unit = models.CharField(max_length=10, null=True, default='')
     bathrooms = models.DecimalField(max_digits=4, decimal_places=1, null=True)
@@ -32,6 +36,14 @@ class Listing(models.Model):
         ordering = ('created',)
 
     def from_csv_row(self, headers, row):
+        """
+        populate a listing object from a csv row
+    
+        :param headers: array of csv headers
+        :param row:     array representing one row of a csv
+        :returns self: self
+        """
+
         name_to_value_dict = {key:value for key, value in zip(headers, row)}
 
         if 'area_unit' in name_to_value_dict:

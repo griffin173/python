@@ -68,6 +68,20 @@ paths:
           - ''
           type: number
       - in: query
+        name: min_bedrooms
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_bedrooms
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
         name: zillow_id
         schema:
           description: ''
@@ -202,6 +216,27 @@ paths:
           type: number
       - in: query
         name: max_zestimate_amount
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: bathrooms
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: min_bathrooms
+        schema:
+          description: ''
+          title: !!python/tuple
+          - ''
+          type: number
+      - in: query
+        name: max_bathrooms
         schema:
           description: ''
           title: !!python/tuple

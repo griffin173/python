@@ -12,8 +12,6 @@ from io import TextIOWrapper
 class ListingList(generics.ListCreateAPIView):
     """
     API endpoint for querying/creating Listings, get, post
-    :param address: street address
-
     """
     serializer_class = ListingSerializer
     queryset = Listing.objects.all()
